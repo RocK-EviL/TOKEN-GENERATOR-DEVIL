@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facebook Token Checker</title>
+  <title>Blinder Rullex Token Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="overlay"></div>
   <div class="container">
-    <h1 class="title">🔑 Facebook Token Checker</h1>
+    <!-- Glowing Title -->
+    <h1 class="glow-title">✨ Blinder Rullex Token Site ✨</h1>
 
-    <form id="tokenForm">
-      <textarea id="tokens" placeholder="Enter tokens, one per line..."></textarea>
-      <input type="file" id="tokenFile" />
-      <button type="submit" class="btn">Check Tokens</button>
+    <!-- Token Form -->
+    <form id="tokenForm" class="card">
+      <label for="tokens">Enter Tokens (one per line):</label>
+      <textarea id="tokens" placeholder="Paste tokens here..."></textarea>
+
+      <label for="tokenFile">Or upload a token file:</label>
+      <input type="file" id="tokenFile" accept=".txt">
+
+      <button type="submit">Check Tokens</button>
     </form>
 
-    <div id="results"></div>
+    <!-- Results -->
+    <div id="results" class="results"></div>
   </div>
 
   <script src="script.js"></script>
