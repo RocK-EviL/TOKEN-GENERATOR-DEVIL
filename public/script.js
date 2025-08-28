@@ -34,8 +34,16 @@ document.getElementById("tokenForm").addEventListener("submit", async (e) => {
     const div = document.createElement("div");
     div.className = "result-card " + (item.valid ? "result-valid" : "result-invalid");
     div.innerHTML = item.valid
-      ? `<strong>✅ Valid</strong><br>Name: ${item.name}<br>ID: ${item.id}`
-      : `<strong>❌ Invalid</strong><br>Error: ${item.error}`;
+  ? `<div class="result-summary">✅ Valid Token</div>
+     <div class="result-details">Name: ${item.name}<br>ID: ${item.id}</div>`
+  : `<div class="result-summary">❌ Invalid Token</div>
+     <div class="result-details">Error: ${item.error}</div>`;
+
+// toggle expand on click
+div.addEventListener("click", () => {
+  div.classList.toggle("expanded");
+});
     resultsDiv.appendChild(div);
   });
 });
+
