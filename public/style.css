@@ -1,20 +1,124 @@
+/* Background with gradient animation */
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #21d4fd);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  overflow: hidden;
+  color: #fff;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism overlay */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(6px);
+}
+
+/* Center card container */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
   text-align: center;
-  background: #f2f2f2;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
 }
+
+/* Form elements */
 textarea {
-  width: 300px;
-  height: 100px;
-  margin: 10px;
-}
-button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
   border: none;
-  cursor: pointer;
+  padding: 12px;
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
 }
+
+textarea:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #21d4fd, #b721ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Results box */
 #results {
-  margin-top: 20px;
+  margin-top: 2rem;
+}
+
+.result-card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-valid {
+  border-left: 6px solid #00e676;
+}
+
+.result-invalid {
+  border-left: 6px solid #ff1744;
 }
