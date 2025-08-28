@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Token Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Token Checker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Facebook Token Checker</h1>
-  <textarea id="tokens" placeholder="Enter one token per line"></textarea>
-  <button onclick="checkTokens()">Check</button>
-  <div id="results"></div>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1 class="title">🔑 Facebook Token Checker</h1>
+
+    <form id="tokenForm">
+      <textarea id="tokens" placeholder="Enter tokens, one per line..."></textarea>
+      <input type="file" id="tokenFile" />
+      <button type="submit" class="btn">Check Tokens</button>
+    </form>
+
+    <div id="results"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
