@@ -42,8 +42,8 @@ app.post("/check-token", async (req, res) => {
   res.json(results);
 });
 
-// Fallback: send index.html for all other routes
-app.get("*", (req, res) => {
+// ✅ FIXED fallback route (no error now)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
